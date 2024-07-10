@@ -193,7 +193,10 @@ int main(){
 				break;
 			case 8:
 				calcularTotalVentas(transaccion,numeroVenta);
-				break;		
+				break;
+			case 9:
+				cout<<"Saliendo del programa...";
+				break;			
 			default:
 				cout<<"Opcion no valida, seleccione una opcion del 1 al 3."<<endl;
 				break;
