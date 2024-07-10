@@ -88,6 +88,30 @@ void eliminarProducto(Producto articulo[], int &numeroProducto){
 	cout<<endl;
 }
 
+void buscarProducto(const Producto articulo[], int numeroProducto){
+	if(numeroProducto==0){
+		cout<<"Aun no se ha registrado productos de momento"<<endl;
+		cout<<endl;
+		return;
+	}
+	string nombreProducto;
+	cout<<"Ingrese el nombre del producto que quiere buscar: ";
+	cin>>nombreProducto;
+	
+	for(int i=0;i<numeroProducto;i++){
+		if(articulo[i].nombre==nombreProducto){
+			cout<<"\nEl producto encontrado es: "<<endl;
+			cout<<"Nombre del producto: "<<articulo[i].nombre<<endl;
+			cout<<"Precio del producto: "<<articulo[i].precio<<endl;
+			cout<<endl;
+			return;
+		}
+	}
+	cout<<"El nombre ingresdo del producto no se encuentra registrado"<<endl;
+	cout<<endl;
+	
+}
+
 int main(){
 	Producto articulo[limiteProductos];
 	Venta transaccion[limiteVentas];
@@ -120,6 +144,8 @@ int main(){
 			case 4:
 				eliminarProducto(articulo,numeroProducto);
 				break;		
+			case 5:
+				buscarProducto(articulo,numeroProducto);	
 			default:
 				cout<<"Opcion no valida, seleccione una opcion del 1 al 3."<<endl;
 				break;
