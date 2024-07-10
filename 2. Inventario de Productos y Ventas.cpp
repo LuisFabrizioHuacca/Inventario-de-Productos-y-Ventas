@@ -29,6 +29,21 @@ void registrarProducto(Producto articulo[],int &numeroProducto){
 	numeroProducto++;
 }
 
+void registrarVenta(Venta transaccion[], int &numeroVenta, int &idVentaActual){
+ 	if (numeroVenta>=limiteVentas){
+        cout<<"\nLimite de ventas alcanzado, no se puede registrar mas Ventas"<<endl;
+        return;
+    }
+	transaccion[numeroVenta].idVenta=idVentaActual++;
+	cout<<"\nIntrodusca el nombre del producto que fue vendido: ";
+	cin>>transaccion[numeroVenta].producto;
+	cout<<"Ingrese la cantidad vendida del producto: ";
+	cin>>transaccion[numeroVenta].cantidad;
+	cout<<"Ingrese el precio total por la venta: ";
+	cin>>transaccion[numeroVenta].precioTotal;
+	numeroVenta++;
+}
+
 
 int main(){
 	Producto articulo[limiteProductos];
@@ -53,6 +68,9 @@ int main(){
 			case 1:
 				registrarProducto(articulo, numeroProducto);
 				break;
+			case 2:
+				registrarVenta(transaccion, numeroVenta, idVentaActual);
+				break;	
 			default:
 				cout<<"Opcion no valida, seleccione una opcion del 1 al 3."<<endl;
 				break;
