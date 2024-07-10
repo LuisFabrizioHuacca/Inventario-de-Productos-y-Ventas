@@ -134,7 +134,7 @@ void actualizarProducto(Producto rticulo[],int numeroProducto){
 		cout<<endl;
 		return;
 	}
-	string nombreProducto
+	string nombreProducto;
 }
 
 void calcularTotalVentas(const Venta transaccion[], int numeroVenta) {
@@ -152,6 +152,7 @@ void calcularTotalVentas(const Venta transaccion[], int numeroVenta) {
 }
 
 int main(){
+	cout<<"Bienvenido";
 	Producto articulo[limiteProductos];
 	Venta transaccion[limiteVentas];
 	int numeroProducto=0;
