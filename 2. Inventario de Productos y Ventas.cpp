@@ -128,6 +128,15 @@ void mostrarVentas(const Venta transaccion[],int numeroVenta){
 	}
 }
 
+void actualizarProducto(Producto rticulo[],int numeroProducto){
+	if(numeroProducto==0){
+		cout<<"No hay productos registrado de momento"<<endl;
+		cout<<endl;
+		return;
+	}
+	string nombreProducto
+}
+
 int main(){
 	Producto articulo[limiteProductos];
 	Venta transaccion[limiteVentas];
@@ -164,6 +173,9 @@ int main(){
 				buscarProducto(articulo,numeroProducto);
 			case 6:
 				mostrarVentas(transaccion,numeroVenta);
+				break;	
+			case 7:
+				actualizarProducto(articulo,numeroProducto);
 				break;	
 			default:
 				cout<<"Opcion no valida, seleccione una opcion del 1 al 3."<<endl;
