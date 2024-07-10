@@ -59,6 +59,35 @@ void mostrarProductos(const Producto articulo[],int numeroProducto){
 	}
 }
 
+void eliminarProducto(Producto articulo[], int &numeroProducto){
+	if (numeroProducto==0){
+		cout<<"No se han registrado productos de momento"<<endl;
+		cout<<endl;
+		return;
+	}
+	string nombreProducto;
+	cout<<"Ingrese el nombre del producto a eliminar: ";
+	cin>>nombreProducto;
+	
+	int indice=-1;
+	for(int i=0;i<numeroProducto;i++){
+		if(articulo[i].nombre==nombreProducto){
+			indice=i;
+			break;
+		}
+	}
+	if (indice==-1){
+		cout<<"El producto no fue encontrado"<<endl;
+		return;
+	}
+	for(int i=indice;i<(numeroProducto-1);i++){
+		articulo[i]=articulo[i+1];
+	}
+	numeroProducto--;
+	cout<<"El producto fue eliminado"<<endl;
+	cout<<endl;
+}
+
 int main(){
 	Producto articulo[limiteProductos];
 	Venta transaccion[limiteVentas];
@@ -87,7 +116,10 @@ int main(){
 				break;	
 			case 3:
 				mostrarProductos(articulo, numeroProducto);
-				break;	
+				break;
+			case 4:
+				eliminarProducto(articulo,numeroProducto);
+				break;		
 			default:
 				cout<<"Opcion no valida, seleccione una opcion del 1 al 3."<<endl;
 				break;
