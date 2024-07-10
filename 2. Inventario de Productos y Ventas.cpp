@@ -137,6 +137,20 @@ void actualizarProducto(Producto rticulo[],int numeroProducto){
 	string nombreProducto
 }
 
+void calcularTotalVentas(const Venta transaccion[], int numeroVenta) {
+    if (numeroVenta==0) {
+        cout<<"\nNo se han registrado ventas de momento"<<endl;
+        cout<<endl;
+    }else{
+        float total=0;
+        for(int i=0;i<numeroVenta;i++){
+            total+=transaccion[i].precioTotal;
+        }
+        cout<<"\nEl total de ventas realizadas es: "<<total<<endl;
+        cout<<endl;
+    }
+}
+
 int main(){
 	Producto articulo[limiteProductos];
 	Venta transaccion[limiteVentas];
