@@ -112,6 +112,22 @@ void buscarProducto(const Producto articulo[], int numeroProducto){
 	
 }
 
+void mostrarVentas(const Venta transaccion[],int numeroVenta){
+	if(numeroVenta==0){
+		cout<<"\nNo hay ventas registradas de momento"<<endl;
+		cout<<endl;
+	}else{
+		cout<<"\nVentas registradas: "<<endl;
+		for (int i=0;i<numeroVenta;i++){
+			cout<<"ID de la venta: "<<transaccion[i].idVenta<<endl;
+			cout<<"Producto vendido: "<<transaccion[i].producto<<endl;
+			cout<<"Cantidad vendidad del producto: "<<transaccion[i].cantidad<<endl;
+			cout<<"Precio total: "<<transaccion[i].precioTotal<<endl;
+			cout<<endl;
+		}
+	}
+}
+
 int main(){
 	Producto articulo[limiteProductos];
 	Venta transaccion[limiteVentas];
@@ -145,7 +161,10 @@ int main(){
 				eliminarProducto(articulo,numeroProducto);
 				break;		
 			case 5:
-				buscarProducto(articulo,numeroProducto);	
+				buscarProducto(articulo,numeroProducto);
+			case 6:
+				mostrarVentas(transaccion,numeroVenta);
+				break;	
 			default:
 				cout<<"Opcion no valida, seleccione una opcion del 1 al 3."<<endl;
 				break;
