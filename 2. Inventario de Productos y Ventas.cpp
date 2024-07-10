@@ -44,6 +44,20 @@ void registrarVenta(Venta transaccion[], int &numeroVenta, int &idVentaActual){
 	numeroVenta++;
 }
 
+void mostrarProductos(const Producto articulo[],int numeroProducto){
+	if(numeroProducto==0){
+		cout<<"\nNo hay productos que hayan sido registrado de momento"<<endl;
+		cout<<endl;
+	}else{
+		cout<<"\nLista de productos registrados: "<<endl;
+		for(int i=0;i<numeroProducto;i++){
+			cout<<"Producto numero "<<(i+1)<<": "<<endl;
+			cout<<"Nombre del producto: "<<articulo[i].nombre<<endl;
+			cout<<"Precio del producto: "<<articulo[i].precio<<endl;
+			cout<<endl;
+		}
+	}
+}
 
 int main(){
 	Producto articulo[limiteProductos];
@@ -70,6 +84,9 @@ int main(){
 				break;
 			case 2:
 				registrarVenta(transaccion, numeroVenta, idVentaActual);
+				break;	
+			case 3:
+				mostrarProductos(articulo, numeroProducto);
 				break;	
 			default:
 				cout<<"Opcion no valida, seleccione una opcion del 1 al 3."<<endl;
