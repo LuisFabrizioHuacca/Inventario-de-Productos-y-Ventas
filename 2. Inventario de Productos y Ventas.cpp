@@ -190,7 +190,10 @@ int main(){
 				break;	
 			case 7:
 				actualizarProducto(articulo,numeroProducto);
-				break;	
+				break;
+			case 8:
+				calcularTotalVentas(transaccion,numeroVenta);
+				break;		
 			default:
 				cout<<"Opcion no valida, seleccione una opcion del 1 al 3."<<endl;
 				break;
